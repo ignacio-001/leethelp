@@ -1,5 +1,5 @@
 const express = require("express");
-const { showproblems, createTask } = require("../controller/problem");
+const { showproblems, createTask, deleteTask } = require("../controller/problem");
 const router = express.Router();
 router.get("/", (req, res) => {
     res.setHeader("Access-Control-Allow-Origin", "*")
@@ -10,4 +10,5 @@ router.get("/", (req, res) => {
      });
 router.route("/send").post( createTask );
 router.route("/allproblems").get( showproblems );
+router.route("/:id").delete(deleteTask);
 module.exports = router;
