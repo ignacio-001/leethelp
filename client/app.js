@@ -4,8 +4,11 @@ const connectDB=require('./db/connect')
 const problems=require('./routes/problems')
 const Problem=require('./models/problems')
 require('dotenv').config();
-const port=8000;
+const port=3001;
 app.use(express.json());
+var cors = require('cors');
+app.use(cors());
+
 app.use('/api',problems);
 const mongoose=require('mongoose')
 const start = async () => {
@@ -18,5 +21,4 @@ const start = async () => {
       console.log(error);
     }
   };
-  
   start();

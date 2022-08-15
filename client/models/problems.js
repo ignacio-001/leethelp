@@ -17,18 +17,22 @@ const problems=new mongoose.Schema({
     },
     firattempted:{
         type: Boolean,
+        required:[true,'firstattempt is must'],
         default: false,
     },
     important:{
         type: Boolean,
+        required:[true,'imp is must'],
         default: false,
     },  
     solved:{
         type: Boolean,
+        required:[true,'solved is must'],
         default: false,
     },    
     secattempt:{
         type: Boolean,
+        required:[true,'secattempt is must'],
         default: false,
     },      
 
